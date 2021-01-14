@@ -2,34 +2,44 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  // Prompt for length of password.
-  var pwdLength = getPasswordLength();
-
-  // Prompt to include upper case characters. Should be Y or N.
-  var pwdUCase = prompt("Do you want to include upper case characters? (Y or N)").toUpperCase();
-
-  // Prompt to include lower case characters. Should be Y or N.
-  var pwdLCase = prompt("Do you want to include lower case characters? (Y or N)").toUpperCase();
-
-  // Prompt to include numbers. Should be Y or N.
-  var pwdNumeric = prompt("Do you want to include numbers? (Y or N)").toUpperCase();
-
-  // Prompt to include special characters. Should be Y or N.
-  var pwdSpecChars = prompt("Do you want to include special characters? (Y or N)").toUpperCase();
-
-  // Validate that the length entered was between 8 and 128.
-  if (pwdLength < 8 || pwdLength > 128) {
-    alert("The password length must be between 8 and 128.");
-    return "Invalid length"
+  var pwdSelections = {
+    pwdLength : 0,
+    useUCase : false,
+    useLCase : false,
+    useSpecChars : false
   }
-  // Validate that at least one character type was selected.
-  else if (pwdUCase !== "Y" && pwdLCase !== "Y" && pwdNumeric !== "Y" && pwdSpecChars !== "Y") {
-    alert("At least one character type must be selected.");
-    return "No character type selected."
-  }
-  else {
-    return randomPassword(pwdLength, pwdUCase == "Y", pwdLCase == "Y", pwdNumeric == "Y", pwdSpecChars == "Y");
-  }
+  
+  // Get password length.
+  pwdSelections.pwdLength = getPasswordLength();
+
+  // If a valid password length was entered, continue with prompts.
+  if (pwdSelections.pwdLength > 0) {
+    // Prompt to include upper case characters.
+    pwdSelections.useUCase = confirm("Do you want to include upper case characters?");
+
+    // Prompt to include lower case characters. Should be Y or N.
+    pwdSelections.useLCase = prompt("Do you want to include lower case characters?");
+
+    // Prompt to include numbers. Should be Y or N.
+    var pwdNumeric = prompt("Do you want to include numbers? (Y or N)").toUpperCase();
+
+    // Prompt to include special characters. Should be Y or N.
+    var pwdSpecChars = prompt("Do you want to include special characters? (Y or N)").toUpperCase();
+
+    // Validate that the length entered was between 8 and 128.
+    if (pwdLength < 8 || pwdLength > 128) {
+      alert("The password length must be between 8 and 128.");
+      return "Invalid length"
+    }
+    // Validate that at least one character type was selected.
+    else if (pwdUCase !== "Y" && pwdLCase !== "Y" && pwdNumeric !== "Y" && pwdSpecChars !== "Y") {
+      alert("At least one character type must be selected.");
+      return "No character type selected."
+    }
+    else {
+      return randomPassword(pwdLength, pwdUCase == "Y", pwdLCase == "Y", pwdNumeric == "Y", pwdSpecChars == "Y");
+    };
+  };
 }
 
 // Function to get password length.
