@@ -32,8 +32,31 @@ function generatePassword() {
   }
 }
 
-function generatePwd() {
-  
+function generatePwd(pLength, uCase, lCase, nums, specChars) {
+  var pwd = "";
+  var charsToUse = "";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var numbers = "0123456789";
+  var specialChars = "!#$%&*";
+
+  if (uCase) {
+    charsToUse += upperCase;
+  };
+
+  if (lowerCase) {
+    charsToUse += lowerCase;
+  };
+
+  if (numbers) {
+    charsToUse += numbers;
+  };
+
+  if (specialChars) {
+    charsToUse += specialChars;
+  };
+
+  return pwd;
 }
 
 // Write password to the #password input
