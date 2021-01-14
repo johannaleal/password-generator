@@ -28,32 +28,42 @@ function generatePassword() {
     return "No character type selected."
   }
   else {
-    return "Password";
+    return randomPassword(pwdLength, pwdUCase == "Y", pwdLCase == "Y", pwdNumeric == "Y", pwdSpecChars == "Y");
   }
 }
 
-function generatePwd(pLength, uCase, lCase, nums, specChars) {
+function randomPassword(pLength, uCase, lCase, nums, specChars) {
+  // Password string that will be returned.
   var pwd = "";
+
+  // String of possible characters that will be used
+  // to generate password.
   var charsToUse = "";
-  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  var numbers = "0123456789";
-  var specialChars = "!#$%&*";
 
+  // If Upper Case was selected then add all the upper case letters.
   if (uCase) {
-    charsToUse += upperCase;
+    charsToUse += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   };
 
-  if (lowerCase) {
-    charsToUse += lowerCase;
+  // If Lower Case was selected then add all the lower case letters.
+  if (lCase) {
+    charsToUse += "abcdefghijklmnopqrstuvwxyz";
   };
 
-  if (numbers) {
-    charsToUse += numbers;
+  // If Numbers were selected then add all the integers from 0 to 9.
+  if (nums) {
+    charsToUse += "0123456789";
   };
 
-  if (specialChars) {
-    charsToUse += specialChars;
+  // If Special Characters were selected then add special characters.
+  if (specChars) {
+    charsToUse += "!#$%&*";
+  };
+
+  // Concatenate a character from the charsToUse string for the length
+  // of password entered.
+  for (var i =1; i <= pLength; i++) {
+    pwd += charsToUse[Math.floor(Math.random() * charsToUse.length)];
   };
 
   return pwd;
