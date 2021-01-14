@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // Prompt for length of password.
-  var pwdLength = Number(prompt("Enter size of password. Must be between 8 and 128."));
+  var pwdLength = getPasswordLength();
 
   // Prompt to include upper case characters. Should be Y or N.
   var pwdUCase = prompt("Do you want to include upper case characters? (Y or N)").toUpperCase();
@@ -30,6 +30,33 @@ function generatePassword() {
   else {
     return randomPassword(pwdLength, pwdUCase == "Y", pwdLCase == "Y", pwdNumeric == "Y", pwdSpecChars == "Y");
   }
+}
+
+// Function to get password length.
+function getPasswordLength() {
+  // Declare password length variable.
+  var pwdLength;
+
+  // Prompt user for length of password. The password must be between 8 and 128 
+  // characters in length.
+  pwdLength = prompt("Enter length of password. Must be between 8 and 128.");
+
+  // If a password length entered is a number then validate the length.
+  if (!isNaN(pwdLength)) {
+    // Convert the password length string to a number.
+    pwdLength = Number(pwdLength);
+
+    // Validate that the number entered is between 8 and 128.
+    if (pwdLength >= 8 || pwdLength <= 128) {
+      return pwdLength;
+    }
+    else {
+      // Display an alert that the password length must be between
+      // 8 and 128.
+      alert("The password length must be between 8 and 128.");
+      return 0;
+    };
+  };
 }
 
 function randomPassword(pLength, uCase, lCase, nums, specChars) {
