@@ -11,28 +11,36 @@ selects from several character types, a random password is generated. The functi
 * The user will be asked to confirm whether they want to include lower case letters.
 * The user will be asked to confirm whether they want to include numbers.
 * The user will be asked to confirm whether they want to include special characters.
-* 
+* An alert will display if a number between 8 and 128 was not entered for the password lenght.
+* An alert will display if none of the character types was selected.
+* If there are no errors from user input, a password will be generated and displayed on the screen.
 
 ## Installation
 
 This project requires the following files and folders:
 * index.html
+* script.js
 * assets folder
-* assets/css folder
-* assets/images folder
-* assets/css/style.css
-* assets/images/brand-awareness.png
-* assets/images/cost-management.png
-* assets/images/digital-marketing-meeting.jpg
-* assets/images/lead-generation.png
-* assets/images/online-reputation-mangement.jpg
-* assets/images/search-engine-optimization.jpg
-* assets/images/social-media-marketing.jpg
+* assets/style.css
+
+## Deployed Website
+
+
 
 ## Index.html Screenshot
+![Github Logo](/assets/images/main-page.png)
 
-![Github Logo](/assets/images/screen-capture.png)
+## Enter Password Length Prompt
+![Github Logo](/assets/images/enter-pwd-length.png)
 
+## Password Length Error Alert
+![Github Logo](/assets/images/pwd-length-error-msg.png)
+
+## Upper Case Character Confirm
+![Github Logo](/assets/images/upper-case-prompt.png)
+
+## Password Generated Web Page
+![Github Logo](/assets/images/password-generated.png)
 
 
 
