@@ -1,6 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Main function to generate random password based on 
+// selection of password length and character types 
+// upper case, lower case, numbers, and/or special characters.
 function generatePassword() {
   // Object to hold all user password selections
   var pwdSelections = {
@@ -14,10 +17,10 @@ function generatePassword() {
   // Prompt the user for the password length.
   var pLength = prompt("Enter length of password. Must be between 8 and 128.");
 
-  // If the OK button was clicked validate the password length.
+  // If the OK button (not null) was clicked validate the password length.
   if (pLength != null) {
     // Get the numeric password length entered by the user.
-    pwdSelections.pwdLength = getPasswordLength(pLength);
+    pwdSelections.pwdLength = getNumericPwdLength(pLength);
   
     // If a valid password length was entered, continue with prompts.
     // A valid password length must be a number from 8 to 128.
@@ -28,7 +31,7 @@ function generatePassword() {
       // Confirm to include lower case characters.
       pwdSelections.useLowerCase = confirm("Do you want to include lower case characters?");
 
-      // Confirm to include numbers. Should be Y or N.
+      // Confirm to include numbers.
       pwdSelections.useNums = confirm("Do you want to include numbers?");
 
       // Confirm to include special characters.
@@ -36,7 +39,8 @@ function generatePassword() {
 
       // Validate that at least one character type was selected.
       if (pwdSelections.useUpperCase || pwdSelections.useLowerCase || 
-        pwdSelections.useNums || pwdSelections.useSpecChars) {
+        pwdSelections.useNums || pwdSelections.useSpecChars) 
+      {
         // Return a random password using the selections made by the user.
         return getRandomPassword(pwdSelections.pwdLength, pwdSelections.useUpperCase, 
               pwdSelections.useLowerCase, pwdSelections.useNums, pwdSelections.useSpecChars);
@@ -44,13 +48,18 @@ function generatePassword() {
       // If no options were selected then display alert that at least one character type must be selected.
       else {
         alert("At least one character type must be selected.");
+
+        // Return the error message that will be displayed on the web page.
         return "No character types were selected."
       };
     }
+    // Alert that the password length entered was not a valid length.
     else if (pwdSelections.pwdLength != null) {
       // Alert that the password length is invalid.
       alert("The password length must be a number between 8 and 128.");
-        return "Invalid password length entered"
+
+      // Return the error message that will be displayed on the web page.
+      return "Invalid password length entered"
     };
   }
   // if the Cancel button was clicked then return an empty string.
@@ -59,10 +68,10 @@ function generatePassword() {
   };
 }
 
-// Function to get password length. It will return a zero if a number 
+// Function to get numeric password length. It will return a zero if a number 
 // was not entered.
-function getPasswordLength(pwdLength) {
-  // If password length entered is a number then convert it to a number.
+function getNumericPwdLength(pwdLength) {
+  // If password length entered is numeric then convert it to a number.
   if (!isNaN(pwdLength)) {
     // Convert the password length string to a number.
     pwdLength = Number(pwdLength);
@@ -71,11 +80,13 @@ function getPasswordLength(pwdLength) {
     return pwdLength;
   }
   else {
-      // If it is not a valid password length, return 0.
+      // If it is not a number, return 0.
       return 0;
     };
 }
 
+// Function to generate a random password based on input parameters.
+//
 // Function parameters:
 // pLength      - number for the password character count
 // useUpperCase - boolean indicating whether to use upper case characters
