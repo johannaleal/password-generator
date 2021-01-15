@@ -11,82 +11,79 @@ function generatePassword() {
     useSpecChars : false
   };
   
-  // Get password length.
-  pwdSelections.pwdLength = getPasswordLength();
+  // Prompt the user for the password length.
+  var pLength = prompt("Enter length of password. Must be between 8 and 128.");
 
-  // If a valid password length was entered, continue with prompts.
-  // A valid password length must be a number from 8 to 128.
-  if (pwdSelections.pwdLength >= 8 && pwdSelections.pwdLength <= 128) {
-    // Confirm to include upper case characters.
-    pwdSelections.useUpperCase = confirm("Do you want to include upper case characters?");
+  // If the OK button was clicked validate the password length.
+  if (pLength != null) {
+    // Get the numeric password length entered by the user.
+    pwdSelections.pwdLength = getPasswordLength(pLength);
+  
+    // If a valid password length was entered, continue with prompts.
+    // A valid password length must be a number from 8 to 128.
+    if (pwdSelections.pwdLength >= 8 && pwdSelections.pwdLength <= 128) {
+      // Confirm to include upper case characters.
+      pwdSelections.useUpperCase = confirm("Do you want to include upper case characters?");
 
-    // Confirm to include lower case characters.
-    pwdSelections.useLowerCase = confirm("Do you want to include lower case characters?");
+      // Confirm to include lower case characters.
+      pwdSelections.useLowerCase = confirm("Do you want to include lower case characters?");
 
-    // Confirm to include numbers. Should be Y or N.
-    pwdSelections.useNums = confirm("Do you want to include numbers?");
+      // Confirm to include numbers. Should be Y or N.
+      pwdSelections.useNums = confirm("Do you want to include numbers?");
 
-    // Confirm to include special characters.
-    pwdSelections.useSpecChars = confirm("Do you want to include special characters?");
+      // Confirm to include special characters.
+      pwdSelections.useSpecChars = confirm("Do you want to include special characters?");
 
-    // Validate that at least one character type was selected.
-    if (pwdSelections.useUpperCase || pwdSelections.useLowerCase || 
-      pwdSelections.useNums || pwdSelections.useSpecChars) {
-      // Return a random password using the selections made by the user.
-      return randomPassword(pwdSelections.pwdLength, pwdSelections.useUpperCase, 
-            pwdSelections.useLowerCase, pwdSelections.useNums, pwdSelections.useSpecChars);
+      // Validate that at least one character type was selected.
+      if (pwdSelections.useUpperCase || pwdSelections.useLowerCase || 
+        pwdSelections.useNums || pwdSelections.useSpecChars) {
+        // Return a random password using the selections made by the user.
+        return getRandomPassword(pwdSelections.pwdLength, pwdSelections.useUpperCase, 
+              pwdSelections.useLowerCase, pwdSelections.useNums, pwdSelections.useSpecChars);
+      }
+      // If no options were selected then display alert that at least one character type must be selected.
+      else {
+        alert("At least one character type must be selected.");
+        return "No character types were selected."
+      };
     }
-    // If no options were selected then display alert that at least one character type must be selected.
-    else {
-      alert("At least one character type must be selected.");
-      return "No character types selected."
+    else if (pwdSelections.pwdLength != null) {
+      // Alert that the password length is invalid.
+      alert("The password length must be a number between 8 and 128.");
+        return "Invalid password length entered"
     };
   }
+  // if the Cancel button was clicked then return an empty string.
   else {
-    // Alert that the password length is invalid.
-    alert("The password length must be between 8 and 128.");
-      return "Invalid length"
+    return "";
   };
 }
 
-// Function to get password length.
-function getPasswordLength() {
-  // Declare password length variable.
-  var pwdLength;
-
-  // Prompt user for length of password. The password must be between 8 and 128 
-  // characters in length.
-  pwdLength = prompt("Enter length of password. Must be between 8 and 128.");
-
-  // If a password length entered is a number then validate the length.
+// Function to get password length. It will return a zero if a number 
+// was not entered.
+function getPasswordLength(pwdLength) {
+  // If password length entered is a number then convert it to a number.
   if (!isNaN(pwdLength)) {
     // Convert the password length string to a number.
     pwdLength = Number(pwdLength);
 
-    // Validate that the number entered is between 8 and 128.
-    // if (pwdLength >= 8 || pwdLength <= 128) {
-
-    // Return the password lenght.
+    // Return the password length.
     return pwdLength;
   }
   else {
-      // Display an alert that the password length must be between
-      // 8 and 128.
-      //alert("The password length must be between 8 and 128.");
-
       // If it is not a valid password length, return 0.
       return 0;
     };
 }
 
-// This function accepts as parameters:
+// Function parameters:
 // pLength      - number for the password character count
 // useUpperCase - boolean indicating whether to use upper case characters
 // useLowerCase - boolean indicating whether to use lower case characters
 // useNums      - boolean indicating whether to use numbers
 // useSpecChars - boolean indicating whether to use special characters
 
-function randomPassword(pLength, useUpperCase, useLowerCase, useNums, useSpecChars) {
+function getRandomPassword(pLength, useUpperCase, useLowerCase, useNums, useSpecChars) {
   // Password string that will be returned.
   var pwd = "";
 
@@ -120,7 +117,8 @@ function randomPassword(pLength, useUpperCase, useLowerCase, useNums, useSpecCha
 
   // Concatenate a random character from the charsToUse string for the length
   // of password entered.
-  for (var i =1; i <= pLength; i++) {
+  for (var i = 1; i <= pLength; i++) {
+    // Get a random number and use this to index into the available characters string.
     pwd += charsToUse[Math.floor(Math.random() * charsToUse.length)];
   };
 
