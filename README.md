@@ -23,7 +23,9 @@ This project requires the following files and folders:
 * assets folder
 * assets/style.css
 
+
 ## Deployed Website
+https://johannaleal.github.io/password-generator/
 
 
 
