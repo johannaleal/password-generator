@@ -30,20 +30,20 @@ This project requires the following files and folders:
 
 ## Index.html Screenshot
 
-![Github Logo](Assets/images/main-page.png)
+![Index page](Assets/images/main-page.png)
 
 ## Enter Password Length Prompt
 
-![Github Logo](Assets/images/enter-pwd-length.PNG)
+![Enter Password Length prompt](Assets/images/enter-pwd-length.PNG)
 
 ## Password Length Error Alert
 
-![Github Logo](Assets/images/pwd-length-error-msg.PNG)
+![Password Length Error alert](Assets/images/pwd-length-error-msg.PNG)
 
 ## Upper Case Character Confirm
 
-![Github Logo](Assets/images/upper-case-prompt.PNG)
+![Upper Case Character confirm](Assets/images/upper-case-prompt.PNG)
 
 ## Password Generated Web Page
 
-![Github Logo](Assets/images/password-generated.PNG)
+![Password Generated Page](Assets/images/password-generated.PNG)
