@@ -18,25 +18,32 @@ selects from several character types, a random password is generated. The functi
 ## Installation
 
 This project requires the following files and folders:
+
 * index.html
 * script.js
 * assets folder
 * assets/style.css
 
 ## Deployed Website
+
 https://johannaleal.github.io/password-generator/
 
 ## Index.html Screenshot
+
 ![Github Logo](/assets/images/main-page.png)
 
 ## Enter Password Length Prompt
+
 ![Github Logo](/assets/images/enter-pwd-length.PNG)
 
 ## Password Length Error Alert
+
 ![Github Logo](/assets/images/pwd-length-error-msg.PNG)
 
 ## Upper Case Character Confirm
+
 ![Github Logo](/assets/images/upper-case-prompt.PNG)
 
 ## Password Generated Web Page
+
 ![Github Logo](/assets/images/password-generated.PNG)
