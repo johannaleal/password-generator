@@ -26,24 +26,24 @@ This project requires the following files and folders:
 
 ## Deployed Website
 
-[GitHub Pages](https://johannaleal.github.io/password-generator/)
+[Password Generator Website](https://johannaleal.github.io/password-generator/)
 
 ## Index.html Screenshot
 
-![Github Logo](/assets/images/main-page.png)
+![Github Logo](Assets/images/main-page.png)
 
 ## Enter Password Length Prompt
 
-![Github Logo](/assets/images/enter-pwd-length.PNG)
+![Github Logo](Assets/images/enter-pwd-length.PNG)
 
 ## Password Length Error Alert
 
-![Github Logo](/assets/images/pwd-length-error-msg.PNG)
+![Github Logo](Assets/images/pwd-length-error-msg.PNG)
 
 ## Upper Case Character Confirm
 
-![Github Logo](/assets/images/upper-case-prompt.PNG)
+![Github Logo](Assets/images/upper-case-prompt.PNG)
 
 ## Password Generated Web Page
 
-![Github Logo](/assets/images/password-generated.PNG)
+![Github Logo](Assets/images/password-generated.PNG)
