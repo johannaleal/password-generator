@@ -1,6 +1,6 @@
 # password-generator
 
-## Introduction
+## Description
 
 In this project, I created a password generator. Once a user enters a password length and  
 selects from several character types, a random password is generated. The functionality is as follows:
