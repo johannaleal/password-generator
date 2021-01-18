@@ -33,16 +33,16 @@ https://johannaleal.github.io/password-generator/
 ![Github Logo](/assets/images/main-page.png)
 
 ## Enter Password Length Prompt
-![Github Logo](/assets/images/enter-pwd-length.png)
+![Github Logo](/assets/images/enter-pwd-length.PNG)
 
 ## Password Length Error Alert
-![Github Logo](/assets/images/pwd-length-error-msg.png)
+![Github Logo](/assets/images/pwd-length-error-msg.PNG)
 
 ## Upper Case Character Confirm
-![Github Logo](/assets/images/upper-case-prompt.png)
+![Github Logo](/assets/images/upper-case-prompt.PNG)
 
 ## Password Generated Web Page
-![Github Logo](/assets/images/password-generated.png)
+![Github Logo](/assets/images/password-generated.PNG)
 
 
 
