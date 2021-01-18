@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this project, I created a password generator. Once a user enters a password length and 
+In this project, I created a password generator. Once a user enters a password length and  
 selects from several character types, a random password is generated. The functionality is as follows:
 
 * The user will click a button on a web page to generate a password.
@@ -26,7 +26,7 @@ This project requires the following files and folders:
 
 ## Deployed Website
 
-https://johannaleal.github.io/password-generator/
+[GitHub Pages](https://johannaleal.github.io/password-generator/)
 
 ## Index.html Screenshot
 
