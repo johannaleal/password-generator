@@ -23,11 +23,8 @@ This project requires the following files and folders:
 * assets folder
 * assets/style.css
 
-
 ## Deployed Website
 https://johannaleal.github.io/password-generator/
-
-
 
 ## Index.html Screenshot
 ![Github Logo](/assets/images/main-page.png)
@@ -43,6 +40,3 @@ https://johannaleal.github.io/password-generator/
 
 ## Password Generated Web Page
 ![Github Logo](/assets/images/password-generated.PNG)
-
-
-
